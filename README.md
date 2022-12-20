@@ -1,15 +1,6 @@
-# X715
+# X715 Power Management Board Controller
 
-The PWN fan is not rotating when X715 is connected to PI 4, we need to to install the pwm fan control script
+This is a fork of the provided Geekworm [X715 software](https://github.com/geekworm-com/x715).
 
-The pytone file need pigpiod library, so we need to install it firstly.
-
-```
-sudo apt-get install -y pigpio python-pigpio python3-pigpio
-sudo systemctl enable pigpiod
-git clone https://github.com/geekworm-com/x715
-sudo reboot
-
-cd ~
-python /home/pi/x715/pwm_fan_control.py&
-```
+Modifications Include:
+- Replace the RPi.GPIO & pigpio libraries with the [GPIOZero](https://github.com/gpiozero/gpiozero) library, which is Officially endorsed by the Raspberry Foundation and simply easier to work with. 
